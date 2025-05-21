@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: El Certificado Digital en la Empresa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 380px;
+        }
+        @media (min-width: 640px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                max-width: 600px;
+                height: 400px;
+                max-height: 450px;
+            }
+        }
+        .card {
+            background-color: #E3F2FD; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+            padding: 1.75rem; 
+            margin-bottom: 1.75rem;
+            color: #212121; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -3px rgba(0,0,0,0.15), 0 6px 12px -6px rgba(0,0,0,0.1);
+        }
+        .card-title {
+            font-size: 1.35rem; 
+            font-weight: 700; 
+            color: #0D47A1; 
+            margin-bottom: 1rem;
+        }
+        .highlight-stat-icon {
+            font-size: 3rem; 
+            text-align: center;
+            margin-bottom: 0.75rem;
+            color: #1976D2; 
+        }
+        .section-title {
+            font-size: 2.25rem; 
+            font-weight: 700;
+            color: #0D47A1; 
+            text-align: center;
+            margin-bottom: 2.5rem; 
+            padding-top: 2.5rem;
+        }
+         .table-container {
+            overflow-x: auto;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 1rem 1.25rem; 
+            text-align: left;
+            border-bottom: 1px solid #CFD8DC; 
+        }
+        th {
+            background-color: #42A5F5; 
+            color: white;
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+        tbody tr:hover {
+            background-color: #E0F2FE;
+        }
+        .primary-cta {
+            background-color: #FF6F00;
+            color: white;
+            font-weight: bold;
+            padding: 0.85rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(255, 111, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .primary-cta:hover {
+            background-color: #E65100;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <header class="bg-gradient-to-r from-[#0D47A1] to-[#1E88E5] py-16 text-white text-center shadow-lg">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">El Certificado Digital:</h1>
+            <p class="text-xl sm:text-2xl md:text-3xl mt-4 opacity-90">Tu Llave Maestra a la Eficiencia Empresarial</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 py-10">
+
+        <section id="introduccion" class="my-12 md:my-16">
+            <h2 class="section-title">¿Por Qué es Tan Importante Hoy?</h2>
+            <div class="max-w-3xl mx-auto text-center text-lg sm:text-xl leading-relaxed text-gray-700">
+                <p class="mb-6">En un mundo cada vez más conectado, el certificado digital no es un lujo, ¡es una necesidad! Funciona como el DNI de tu empresa en el entorno online, garantizando <strong class="text-[#0D47A1] font-semibold">quién eres, que tus operaciones son seguras y que nadie ha metido mano</strong> en tus documentos.</p>
+                <p>Adoptarlo es dar un salto hacia la modernización, ahorrando costes y permitiendo que tu negocio compita con los grandes, sin importar su tamaño.</p>
+                <div class="mt-10">
+                    <span class="text-5xl">🚀</span>
+                    <p class="text-xl font-semibold text-[#0D47A1] mt-2">Digitaliza, agiliza y asegura tu futuro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ventajas" class="my-12 md:my-16">
+            <h2 class="section-title">Beneficios Clave que Transforman tu Negocio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+                <div class="card">
+                    <div class="highlight-stat-icon">⏱️</div>
+                    <h3 class="card-title">Papeleo en Tiempo Récord</h3>
+                    <p>Olvídate de montañas de papel y firmas a mano. Contratos, solicitudes... ¡todo listo en minutos y online!</p>
+                </div>
+                <div class="card">
+                    <div class="highlight-stat-icon">⚖️</div>
+                    <h3 class="card-title">Validez Legal Total</h3>
+                    <p>Tus documentos digitales tienen la misma fuerza legal que los físicos. ¡Máxima seguridad y confianza en tus trámites!</p>
+                </div>
+                <div class="card">
+                    <div class="highlight-stat-icon">💰</div>
+                    <h3 class="card-title">Ahorro que se Nota</h3>
+                    <p>Menos papel, menos tinta, menos envíos. Tu bolsillo y el medio ambiente te lo agradecerán.</p>
+                </div>
+                <div class="card">
+                    <div class="highlight-stat-icon">🌐</div>
+                    <h3 class="card-title">Acceso Sin Fronteras</h3>
+                    <p>Conéctate con la administración y otros servicios online 24/7, desde donde quieras. ¡Tu oficina en cualquier parte!</p>
+                </div>
+                <div class="card">
+                    <div class="highlight-stat-icon">✨</div>
+                    <h3 class="card-title">Imagen Moderna y Profesional</h3>
+                    <p>Demuestra que tu empresa está a la vanguardia, apostando por la innovación y la seguridad digital.</p>
+                </div>
+                <div class="card">
+                    <div class="highlight-stat-icon">💻</div>
+                    <h3 class="card-title">Impulso al Teletrabajo</h3>
+                    <p>Facilita que tu equipo trabaje de forma remota con total seguridad y eficiencia. ¡Productividad sin límites!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="eficiencia" class="my-12 md:my-16">
+            <h2 class="section-title">Impacto Real: Eficiencia Disparada</h2>
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <div class="lg:col-span-3 card">
+                    <h3 class="card-title text-center mb-6">Gestión de Contratos: El Antes y el Después</h3>
+                    <div class="table-container">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th>Etapa del Proceso</th>
+                                    <th>Gestión Tradicional</th>
+                                    <th>Con Certificado Digital</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Redacción y Revisión</td><td>1-2 Días</td><td>0.5-1 Horas</td></tr>
+                                <tr><td>Envío y Recepción</td><td>2-4 Días</td><td>Instantáneo</td></tr>
+                                <tr><td>Proceso de Firma</td><td>1-3 Días</td><td>Minutos</td></tr>
+                                <tr><td>Archivo y Custodia</td><td>0.5-1 Día</td><td>Instantáneo</td></tr>
+                                <tr class="font-bold bg-blue-50"><td>Tiempo Total Estimado</td><td>4.5-10 Días</td><td>0.5-2.5 Horas</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-600 text-center">Nota: Los tiempos son estimaciones y pueden variar.</p>
+                </div>
+                <div class="lg:col-span-2 card">
+                     <h3 class="card-title text-center mb-6">Reducción Drástica del Tiempo Total</h3>
+                    <div class="chart-container h-[300px] sm:h-[350px]">
+                        <canvas id="eficienciaChart"></canvas>
+                    </div>
+                    <p class="mt-6 text-center text-gray-700">Un proceso contractual que tradicionalmente consume unas <strong class="text-[#FF6F00] font-semibold">~58 horas</strong>, puede reducirse a tan solo <strong class="text-[#FF6F00] font-semibold">~1.5 horas</strong> con el certificado digital.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafios" class="my-12 md:my-16">
+            <h2 class="section-title">Desafíos Comunes: ¡Prepárate y Supéralos!</h2>
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <div class="lg:col-span-2 card">
+                    <h3 class="card-title text-center mb-6">Principales Dificultades Reportadas</h3>
+                    <div class="chart-container">
+                        <canvas id="dificultadesChart"></canvas>
+                    </div>
+                     <p class="mt-6 text-sm text-center text-gray-600">Conocer los obstáculos es el primer paso para vencerlos.</p>
+                </div>
+                <div class="lg:col-span-3 card">
+                    <h3 class="card-title">Consejos Prácticos para Cada Desafío:</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li>
+                            <strong class="text-[#0D47A1] block mb-1">📄 Proceso de Obtención:</strong> Sí, puede ser un poco rollo al inicio. <strong class="text-[#1976D2]">Planifica con antelación</strong> y revisa si para tu caso (certificado personal) existe la opción de video-identificación. La instalación suele ser intuitiva.
+                        </li>
+                        <li>
+                            <strong class="text-[#0D47A1] block mb-1">⚙️ Software y Compatibilidad:</strong> Mantén tus <strong class="text-[#1976D2]">navegadores actualizados</strong>. Para firmar PDFs, herramientas como <strong class="text-[#1976D2]">PDF Pro</strong> son tus aliadas. Asegúrate de tener todo bien configurado.
+                        </li>
+                        <li>
+                            <strong class="text-[#0D47A1] block mb-1">🗓️ Gestión y Renovación:</strong> ¡Que no te pille el toro! Los certificados caducan (FNMT empresa: 36 meses, persona física: 4 años). <strong class="text-[#1976D2]">Ponte recordatorios</strong> para renovar (unos 2 meses antes). Haz copias de seguridad y usa contraseñas fuertes.
+                        </li>
+                        <li>
+                            <strong class="text-[#0D47A1] block mb-1">🆘 Problemas Técnicos:</strong> Si algo falla, consulta la <strong class="text-[#1976D2]">documentación oficial</strong> o el soporte de tu entidad emisora. ¡No estás solo!
+                        </li>
+                        <li>
+                            <strong class="text-[#0D47A1] block mb-1">🧑‍🏫 Formación del Equipo:</strong> Es clave que tu personal sepa usarlo bien y entienda la importancia de <strong class="text-[#1976D2]">protegerlo</strong>. Un equipo informado es un equipo seguro y eficiente.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="my-12 md:my-16 py-12 bg-gradient-to-r from-[#0D47A1] to-[#1E88E5] text-white rounded-xl shadow-2xl">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">El Futuro es Digital, y el Certificado es tu Pasaporte</h2>
+                <p class="text-lg sm:text-xl opacity-90 mb-8 max-w-3xl mx-auto">Adoptar el certificado digital ya no es una opción, es una <strong class="font-semibold">decisión estratégica inteligente</strong>. Los beneficios en eficiencia, seguridad y ahorro superan con creces los pequeños desafíos iniciales.</p>
+                <button class="primary-cta text-lg">
+                    ¡Inicia tu Transformación Digital Ahora!
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-10 bg-[#0B3A7B] text-gray-300 text-sm border-t border-blue-700">
+        <p>&copy; 2025 SERGIO VARGAS JUSTICIA S.L. Todos los derechos reservados.</p>
+        <p>Infografía demostrativa sobre el Certificado Digital en el ámbito empresarial.</p>
+    </footer>
+
+    <script>
+        function wrapTextForChartJs(text, maxWidth) {
+            if (typeof text !== 'string' || text.length <= maxWidth) {
+                return text;
+            }
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 <= maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { size: 11, family: 'Inter' },
+                        padding: 18,
+                        color: '#212121'
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgba(0,0,0,0.8)',
+                    titleFont: { size: 13, family: 'Inter', weight: 'bold' },
+                    bodyFont: { size: 11, family: 'Inter' },
+                    padding: 12,
+                    cornerRadius: 6,
+                    boxPadding: 4,
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            animation: {
+                duration: 800,
+                easing: 'easeInOutQuart'
+            }
+        };
+
+        const eficienciaCtx = document.getElementById('eficienciaChart').getContext('2d');
+        new Chart(eficienciaCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapTextForChartJs('Gestión Tradicional',15), wrapTextForChartJs('Con Certificado Digital',15)],
+                datasets: [{
+                    label: 'Tiempo Total Estimado (Horas)',
+                    data: [58, 1.5], 
+                    backgroundColor: ['#FF6F00', '#1976D2'],
+                    borderColor: ['#E65100', '#0D47A1'],
+                    borderWidth: 1.5,
+                    borderRadius: 4,
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    y: {
+                        ticks: { 
+                            color: '#212121',
+                            font: {size: 11, family: 'Inter'}
+                        },
+                        grid: { display: false }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Horas Estimadas',
+                            color: '#212121',
+                            font: {size: 12, family: 'Inter', weight: '600'}
+                        },
+                        ticks: { color: '#212121', font: {family: 'Inter'} },
+                        grid: { color: '#E0E0E0', borderDash: [3,3] }
+                    }
+                },
+                 plugins: {
+                    ...commonChartOptions.plugins,
+                    tooltip: {
+                        ...commonChartOptions.plugins.tooltip,
+                        callbacks: {
+                             ...commonChartOptions.plugins.tooltip.callbacks,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x + ' horas';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const dificultadesLabelsSource = [
+            'Proceso de Obtención y Acreditación',
+            'Problemas de Instalación y Config. de Software',
+            'Incompatibilidad Navegadores/Sistemas',
+            'Gestión de Caducidad y Renovación',
+            'Soporte Técnico Especializado'
+        ];
+        const dificultadesLabelsWrapped = dificultadesLabelsSource.map(label => wrapTextForChartJs(label, 16));
+
+        const dificultadesCtx = document.getElementById('dificultadesChart').getContext('2d');
+        new Chart(dificultadesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: dificultadesLabelsWrapped,
+                datasets: [{
+                    label: 'Distribución de Dificultades',
+                    data: [25, 35, 20, 10, 10],
+                    backgroundColor: [
+                        '#0D47A1', 
+                        '#1976D2', 
+                        '#42A5F5', 
+                        '#90CAF9', 
+                        '#FF8F00' 
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3,
+                    hoverOffset: 10,
+                    hoverBorderColor: '#F5F5F5'
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                cutout: '60%',
+                plugins: {
+                     ...commonChartOptions.plugins,
+                    legend: {
+                        ...commonChartOptions.plugins.legend,
+                        labels: {
+                            ...commonChartOptions.plugins.legend.labels,
+                             boxWidth: 15,
+                             font: { size: 10, family: 'Inter' }
+                        }
+                    },
+                    tooltip: {
+                         ...commonChartOptions.plugins.tooltip,
+                        callbacks: {
+                            ...commonChartOptions.plugins.tooltip.callbacks,
+                            label: function(context) {
+                                let label = context.label;
+                                if (Array.isArray(label)) {
+                                    label = label.join(' ');
+                                }
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
